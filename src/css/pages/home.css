@@ -1,0 +1,49 @@
+#page-home {
+    display: grid;
+    &>div {
+        display: grid;
+        gap: 32px;
+        border-radius: 64px;
+        padding: 64px;
+        justify-items: start;
+        place-content: center;
+
+        --a: .90;
+
+        background-image:
+            linear-gradient(
+                75deg,
+                hsla(var(--h),var(--s),calc(var(--tema) var(--tema-calc) 20%),var(--a)),
+                hsla(var(--h),var(--s),calc(var(--tema) var(--tema-calc) 12%),var(--a)),
+                hsla(var(--h),var(--s),calc(var(--tema) var(--tema-calc) 4%),var(--a))
+            ),
+            url('puzze.png');
+        ;
+
+        &>* {--a: 100;}
+
+        &>h1 {
+            font-size: 64px;
+            width: 70%;
+            font-weight: 900;
+        }
+        &>p {
+            font-weight: 500;
+            width: 70%;
+            font-size: 20px;
+        }
+    }
+    &>div {
+        padding: 32px;
+        margin-inline: 16px;
+        border-radius: 32px;
+        height: max-content;
+        &>h1 {
+            font-size: 40px;
+            width: 100%;
+        }
+        &>p {
+            width: 100%;
+        }
+    }
+}
