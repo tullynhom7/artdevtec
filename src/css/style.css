@@ -2,7 +2,7 @@ body {
     display: grid;
     grid-template-rows: auto 1px 1fr;
     height: 100dvh;
-    overflow: hidden auto;
+    overflow: hidden;
     position: relative;
 
     &>header {
@@ -51,6 +51,7 @@ body {
 
     &>main {
         display: grid;
+        overflow: hidden;
     }
 
     &>aside {
@@ -70,98 +71,12 @@ body {
     }
 }
 
-
-.rangeWrap {
-    width: 40%;
-
-    &>*:not(input) {
-        pointer-events: none;
-    }
-}
-
-.rangeWrap input {
-    width: 100%;
-    margin: 0;
-}
-
-.rangeWrap .ticks {
-    display: flex;
-    justify-content: space-between;
-    height: 6px;
-    margin: -1.5em 5px 0 6px;
-    font: 10px Arial;
-    counter-reset: count 0;
-
-}
-
-.rangeWrap .ticks>div {
-    height: 100%;
-    width: 1px;
-    background: silver;
-    counter-increment: count 1;
-}
-
-.rangeWrap .ticks>div {
-    height: 200%;
-}
-
-.rangeWrap .ticks>div::before {
-    display: block;
-    content: counter(count);
-    transform: translate(-50%, 100%);
-    text-align: center;
-    width: 16px;
-}
-
-.pieces-input {
-    display: grid;
-    width: 100%;
-
-    &>*:not(input) {
-        pointer-events: none;
-    }
-
-    &>input {
-
-        --input-background: hsla(var(--h),var(--s),calc(var(--surface-background) var(--tema-calc) 8%),var(--a));
-        --input-color: hsla(var(--h),var(--s),calc(var(--surface-color) var(--tema-calc) 20%),var(--a));
-
-        all: unset;
-        background: var(--input-background);
-        color: var(--input-color);
-        padding: 4px;
-        border-radius: 50px;
-
-        &::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: hsla(var(--h),var(--s),48%,var(--a));
-        }
-    }
-
-    .ticks {
-        display: flex;
-        justify-content: space-between;
-        height: 16px;
-        margin-top: -16px;
-        margin-inline: 16px;
-        font: 10px Arial;
-        counter-reset: count 0;
-
-        &>div {
-            height: 200%;
-            width: 1px;
-            background: silver;
-            counter-increment: count 1;
-
-            &::before {
-                display: block;
-                content: counter(count);
-                transform: translate(-50%, 200%);
-                text-align: center;
-                width: 16px;
+@media screen and (max-width: 768px){
+    #m-nav {
+        .pieces-button {
+            padding: 8px;
+            .label {
+                display: none;
             }
         }
     }

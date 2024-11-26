@@ -1,8 +1,11 @@
 #page-config {
-    display: grid;
-    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
-    place-content: center;
+    padding: 16px;
+    place-content: start center;
+    overflow: scroll;
 
     .hsl {
         display: grid;

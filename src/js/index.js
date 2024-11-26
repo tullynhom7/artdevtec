@@ -12,7 +12,7 @@ document.body.classList.add(art.paleta.get())
 // Fill m-nav
 art.pages
 .filter(page=>page.showInNavigation)
-.forEach(page=>{
+.forEach((page, i)=>{
     const template = `
         <label class="
             pieces-button
@@ -30,7 +30,7 @@ art.pages
             ripple-to-mg
             icon-filled-active
         ">
-            <input type="radio" name="nav" value="${page.name}" class="surface-controller">
+            <input id="nav-btn-${i}" type="radio" name="nav" value="${page.name}" class="surface-controller">
             <span class="material-symbols-rounded icon" translate="no">${page.icon}</span>
             <span class="label">${page.name}</span>
             <span class="pieces-ripple secondary"></span>
@@ -43,7 +43,7 @@ document.querySelectorAll("#m-nav input").forEach(input=>{
         art.pages.filter(page=>page.name==input.value)[0].main()
     })
 })
-// document.querySelector('#m-nav .pieces-nav-button').click()
+document.querySelector('#m-nav .pieces-button').click()
 
 document.addEventListener("click", (event)=>{
     if(event.target.classList.contains("presentation")) art.presentation.set(event.target.innerHTML)

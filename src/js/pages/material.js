@@ -9,41 +9,35 @@ art.pages.push({
         mMain.innerHTML = `
             <section id="page-material" class="pieces-surface bg">
                 <style>
+                    #page-material {
+                        #dad {
+                            display: grid;
+                            place-content: center;
+                            place-self: center;
+                            gap: 16px;
+                            grid-template-columns: repeat(2, auto);
+                            width: 300px;
+                            height: 300px;
+                            border-radius: 50px;
+                            border-width: 16px;
+                            border-style: solid;
+                            transition: .3s;
 
-                    #m-main {
-                        place-content: center;
-                        place-self: center;
-                        grid-template-columns: repeat(2, auto);
-                        gap: 16px;
-                    }
-
-                    #dad {
-                        display: grid;
-                        place-content: center;
-                        place-self: center;
-                        gap: 16px;
-                        grid-template-columns: repeat(2, auto);
-                        width: 300px;
-                        height: 300px;
-                        border-radius: 50px;
-                        border-width: 16px;
-                        border-style: solid;
-                        transition: .3s;
-
-                        &:has(input:checked) {
-                            .pieces-parent {
-                                height: 100px;
+                            &:has(input:checked) {
+                                .pieces-parent {
+                                    height: 100px;
+                                }
                             }
                         }
-                    }
 
-                    input { display: none;}
+                        input { display: none;}
 
-                    .pieces-parent {
-                        width: 50px;
-                        height: 10px;
-                        border-radius: 16px;
-                        transition: .3s;
+                        .pieces-parent {
+                            width: 50px;
+                            height: 10px;
+                            border-radius: 16px;
+                            transition: .3s;
+                        }
                     }
                 </style>
                 <label id="dad" class="
