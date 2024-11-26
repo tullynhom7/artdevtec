@@ -13,7 +13,7 @@ document.body.classList.add(art.paleta.get())
 art.pages
 .filter(page=>page.showInNavigation)
 .forEach((page, i)=>{
-    const template = `
+    const template = /*html*/`
         <label class="
             pieces-button
             pieces-surface

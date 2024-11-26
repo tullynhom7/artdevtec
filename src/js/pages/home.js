@@ -3,10 +3,12 @@ art.pages.push({
     icon: 'home',
     showInNavigation: true,
     main() {
+        //m-header
+        document.querySelector('#m-header #titulo h2').innerText = this.name
         //m-main
         const mMain = document.querySelector(`#m-main`)
         //inserir m-layout da pagina
-        mMain.innerHTML = `
+        mMain.innerHTML = /*html*/`
             <section id="page-home" class="pieces-surface bg ripple-to-accent">
                 <div class="pieces-surface mg">
                     <h1>Adaptável e Fexível

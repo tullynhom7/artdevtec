@@ -29,6 +29,7 @@
     .label {
         display: grid;
         place-content: center;
+        font-weight: 500;
     }
 
     &:has(.icon):not(:has(.label)) {

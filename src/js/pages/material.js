@@ -3,10 +3,12 @@ art.pages.push({
     icon: 'extension',
     showInNavigation: true,
     main() {
+        //m-header
+        document.querySelector('#m-header #titulo h2').innerText = this.name
         //m-main
         const mMain = document.querySelector(`#m-main`)
         //inserir m-layout da pagina
-        mMain.innerHTML = `
+        mMain.innerHTML = /*html*/`
             <section id="page-material" class="pieces-surface bg">
                 <style>
                     #page-material {

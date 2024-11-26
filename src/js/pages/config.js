@@ -3,6 +3,9 @@ art.pages.push({
     icon: 'settings',
     showInNavigation: true,
     main() {
+        //m-header
+        document.querySelector('#m-header #titulo h2').innerText = this.name
+        //m-main
         const mMain = document.querySelector(`#m-main`)
         mMain.innerHTML = `
             <section id="page-config" class="pieces-surface bg"></section>
@@ -14,7 +17,7 @@ art.pages.push({
     },
     hslslider(id, seth){
 
-        let templateFragment = `
+        let templateFragment = /*html*/`
             <style>
                 #page-config>#main-color {
                     border-radius: 16px;
@@ -159,7 +162,7 @@ art.pages.push({
         setAngle(art.HUEMainColor.get());
     },
     tema(id) {
-        let templateFragment = `
+        let templateFragment = /*html*/`
             <style>
                 #page-config>#tema {
                     display: grid;
@@ -262,7 +265,7 @@ art.pages.push({
         })
     },
     paletas(id){
-        let templateFragment = `
+        let templateFragment = /*html*/`
             <style>
                 #page-config {
                     #paletas {
@@ -278,78 +281,109 @@ art.pages.push({
                             grid-auto-flow: column;
                             gap: 16px;
                         }
-
-                        .circle {
-                            width: 100px;
-                            height: 100px;
-                            border-radius: 100%;
-                            position: relative;
-                            overflow: hidden;
+                        .option {
+                            width: 5rem;
+                            height: 8.75rem;
+                            border-radius: 8px;
+                            border-style: solid;
+                            border-width: 1px;
+                            
                             display: grid;
-                            place-items: center;
+                            grid-template-rows: auto 1fr;
+                            text-decoration: none;
+                            user-select: none;
+                            box-sizing: border-box;
                             cursor: var(--cursor-pointer);
-                            &>span {
-                                width: 100px;
-                                height: 100px;
-                                display: block;
-                                position: absolute;
-                                &:nth-child(1) {
-                                    top: -50px;
+
+                            input {display:none;}
+
+                            .colors {
+                                display: grid;
+                                border-radius: 8px;
+                                margin: 4px;
+                                width: calc(80px - 10px);
+                                aspect-ratio: 1/1;
+                                position: relative;
+                                overflow: hidden;
+
+                                &>span:not(.icon) {
+                                    width: calc(80px - 10px);
+                                    aspect-ratio: 1/1;
+                                    display: grid;
+                                    position: absolute;
+                                    &:nth-child(1) {top: 0px;}
+                                    &:nth-child(2) {
+                                        bottom: -35px;
+                                        left: -35px;
+                                    }
+                                    &:nth-child(3) {
+                                        bottom: -35px;
+                                        right: -35px;
+                                    }
                                 }
-                                &:nth-child(2) {
-                                    bottom: -50px;
-                                    left: -50px;
-                                }
-                                &:nth-child(3) {
-                                    bottom: -50px;
-                                    right: -50px;
-                                }
+                            }
+
+                            &>.label {
+                                font-size: 12px;
+                                font-weight: 500;
+                                display: grid;
+                                place-items: center;
+                                overflow: hidden;
+                                text-align: center;
+                                pointer-events: none;
                             }
 
                             .icon {
                                 border-radius: 100%;
-                                padding: 16px;
+                                padding: 8px;
                                 width: min-content;
                                 height: min-content;
                                 display: block;
                                 opacity: 0;
+                                place-self: center;
                             }
-                            &:has(input:checked) .icon {
-                                opacity: 1;
-                            }
-
-                        }
-                        .font {
-                                display: grid;
-                                width: 360px;
-                            }
+                            &:has(input:checked) .icon {opacity: 1;}
                         }
                     }
                 }
             </style>
             <section id="paletas" class="pieces-surface background-color-mg">
-                <h1>Tema</h1>
+                <h1>Paleta</h1>
                 <div>
-                    <label class="circle analoga">
-                        <span class="pieces-surface background-color-fg primary"></span>
-                        <span class="pieces-surface background-color-fg secondary"></span>
-                        <span class="pieces-surface background-color-fg tertiary"></span>
-                        <span class="material-symbols-rounded icon pieces-surface background-color-fg text-color-to-fg inverse" translate="no">done</span>
-                        <input type="radio" name="paleta" value="analoga"/>
+                    <label class="analoga option pieces-surface background-color-hover-to-mg border-color-toned">
+                        <div class="colors">
+                            <span class="pieces-surface background-color-fg primary"></span>
+                            <span class="pieces-surface background-color-fg secondary"></span>
+                            <span class="pieces-surface background-color-fg tertiary"></span>
+                            <span class="material-symbols-rounded icon pieces-surface background-color-fg text-color-to-fg inverse" translate="no">done</span>
+                        </div>
+                        <span class="label">analoga</span>
+                        <input class="surface-controller" type="radio" name="paleta" value="analoga"/>
+                        <span class="pieces-ripple"></span>
                     </label>
-                    <label class="circle triade">
-                        <span class="pieces-surface background-color-fg primary"></span>
-                        <span class="pieces-surface background-color-fg secondary"></span>
-                        <span class="pieces-surface background-color-fg tertiary"></span>
-                        <span class="material-symbols-rounded icon pieces-surface background-color-fg text-color-to-fg inverse" translate="no">done</span>
-                        <input type="radio" name="paleta" value="triade"/>
+
+                    <label class="triade option pieces-surface background-color-hover-to-mg border-color-toned">
+                        <div class="colors">
+                            <span class="pieces-surface background-color-fg primary"></span>
+                            <span class="pieces-surface background-color-fg secondary"></span>
+                            <span class="pieces-surface background-color-fg tertiary"></span>
+                            <span class="material-symbols-rounded icon pieces-surface background-color-fg text-color-to-fg inverse" translate="no">done</span>
+                        </div>
+                        <span class="label">triade</span>
+                        <input class="surface-controller" type="radio" name="paleta" value="triade"/>
+                        <span class="pieces-ripple"></span>
                     </label>
-                    <label class="circle complementar">
-                        <span class="pieces-surface background-color-fg primary"></span>
-                        <span class="pieces-surface background-color-fg secondary"></span>
-                        <span class="pieces-surface background-color-fg tertiary"></span>
-                        <span class="material-symbols-rounded icon pieces-surface background-color-fg text-color-to-fg inverse" translate="no">done</span>
-                        <input type="radio" name="paleta" value="complementar"/>
+
+                    <label class="complementar option pieces-surface background-color-hover-to-mg border-color-toned">
+                        <div class="colors">
+                            <span class="pieces-surface background-color-fg primary"></span>
+                            <span class="pieces-surface background-color-fg secondary"></span>
+                            <span class="pieces-surface background-color-fg tertiary"></span>
+                            <span class="material-symbols-rounded icon pieces-surface background-color-fg text-color-to-fg inverse" translate="no">done</span>
+                        </div>
+                        <span class="label">complementar</span>
+                        <input class="surface-controller" type="radio" name="paleta" value="complementar"/>
+                        <span class="pieces-ripple"></span>
                     </label>
                 </div>
             </section>
