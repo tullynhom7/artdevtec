@@ -1,44 +1,27 @@
 #page-home {
     display: grid;
-    overflow-y: scroll;
+    overflow: hidden scroll;
 
     #recents {
 
         display: grid;
-
-        grid-template-areas:
-            "ar1 ar1 ar2 ar2"
-            "ar1 ar1 ar3 ar4"
-            "ar5 ar6 ar7 ar8";
         gap: 16px;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        padding: 64px;
-        height: calc(100vh - 81px);
+        padding: 16px;
 
         &>article {
+
+            display: grid;
+            padding: 32px;
 
             border-radius: 4px;
             border-width: 1px;
             border-style: solid;
-
-            &:nth-child(1) { grid-area: ar1; }
-            &:nth-child(2) { grid-area: ar2; }
-            &:nth-child(3) { grid-area: ar3; }
-            &:nth-child(4) { grid-area: ar4; }
-            &:nth-child(5) { grid-area: ar5; }
-            &:nth-child(6) { grid-area: ar6; }
-            &:nth-child(7) { grid-area: ar7; }
-            &:nth-child(8) { grid-area: ar8; }
         }
     }
-
-    
 
     #banner-pieces {
         display: grid;
         gap: 32px;
-        /* border-radius: 64px; */
         padding: 64px;
         justify-items: start;
         place-content: center;
@@ -68,15 +51,63 @@
             font-size: 20px;
         }
     }
-    &>div {
-        padding: 32px;
-        /* border-radius: 32px; */
-        &>h1 {
-            font-size: 40px;
-            width: 100%;
-        }
-        &>p {
-            width: 100%;
+
+}
+
+/* 📱 Mobile (1 coluna) */
+@media (max-width: 767px) {
+/* Estilos para celulares */
+    #page-home {
+
+        --scrollbar-display: none;
+
+        #recents {}
+    }
+}
+
+/* 📟 Tablets e dobráveis (2 colunas) */
+@media (min-width: 768px) and (max-width: 1279px) {
+/* Estilos para tablets e dobráveis */
+    #page-home {
+
+        --scrollbar-display: none;
+
+        #recents {}
+    }
+}
+
+/* 🖥️ Telas grandes (ajustes para desktops grandes) */
+@media (min-width: 1280px) {
+/* Estilos para telas grandes */
+    #page-home {
+        #recents {
+            grid-template-areas:
+                "ar1 ar1 ar2 ar2"
+                "ar1 ar1 ar3 ar4"
+                "ar5 ar6 ar7 ar8"
+            ;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            padding: 64px;
+            height: calc(100vh - 81px);
+
+            &>article {
+
+                display: grid;
+    
+                border-radius: 4px;
+                border-width: 1px;
+                border-style: solid;
+    
+                &:nth-child(1) { grid-area: ar1; }
+                &:nth-child(2) { grid-area: ar2; }
+                &:nth-child(3) { grid-area: ar3; }
+                &:nth-child(4) { grid-area: ar4; }
+                &:nth-child(5) { grid-area: ar5; }
+                &:nth-child(6) { grid-area: ar6; }
+                &:nth-child(7) { grid-area: ar7; }
+                &:nth-child(8) { grid-area: ar8; }
+            }
         }
     }
 }
