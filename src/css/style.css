@@ -1,6 +1,7 @@
 body {
     display: grid;
     overflow: hidden;
+    height: 100dvh;
 
     #m-header {
         display: grid;

@@ -38,8 +38,59 @@ art.pages.push({
                             <span class="piece-ripple"></span>
                         </label>
                     </article>
-                    <article class="piece-surface background-color-088 border-color-080"></article>
-                    <article class="piece-surface background-color-088 border-color-080"></article>
+                    <article id="harpa" class="piece-surface background-color-088 border-color-080">
+                        <img src="src/img/harpa icon.png">
+                    </article>
+                    <article id="card-button" class="piece-surface background-color-088 border-color-080">
+                        <header></header>
+                        <main class="piece-surface bg-dot">
+                            <button id="export-exel-jestor-completo" class="piece-button piece-surface background-color-056 text-color-100 ripple-color-100 background-color-044-hover">
+                                <span class="material-symbols-rounded icon" translate="no">download</span>
+                                <span class="label">Button</span>
+                                <span class="piece-ripple"></span>
+                            </button>
+                            <button id="export-exel-jestor-completo" class="
+                                piece-button
+                                piece-surface
+                                background-color-096
+                                text-color-004
+                                border-color-056
+                                ripple-color-100
+                                background-color-092-hover
+                            ">
+                                <span class="material-symbols-rounded icon" translate="no">download</span>
+                                <span class="piece-ripple"></span>
+                            </button>
+                            <button id="export-exel-jestor-completo" class="
+                                piece-button
+                                piece-surface
+                                background-color-096
+                                text-color-004
+                                border-color-056
+                                ripple-color-100
+                                background-color-092-hover
+                            ">
+                                <span class="material-symbols-rounded icon" translate="no">download</span>
+                                <span class="label">Button</span>
+                                <span class="piece-ripple"></span>
+                            </button>
+                            <button id="export-exel-jestor-completo"
+                            style="border-width: 1px; border-style: solid;"
+                            class="
+                                piece-button
+                                piece-surface
+                                text-color-004
+                                border-color-072
+                                ripple-color-100
+                                background-color-092-hover
+                            ">
+                                <span class="material-symbols-rounded icon" translate="no">download</span>
+                                <span class="label">Outlined</span>
+                                <span class="piece-ripple"></span>
+                            </button>
+                        </main>
+                        <footer></footer>
+                    </article>
                     <article class="piece-surface background-color-088 border-color-080"></article>
                     <article class="piece-surface background-color-088 border-color-080"></article>
                     <article class="piece-surface background-color-088 border-color-080"></article>
