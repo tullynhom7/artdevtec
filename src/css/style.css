@@ -69,8 +69,6 @@ body {
 /* Estilos para celulares */
     body {
         
-        height: 100vh;
-
         grid-template-rows: 80px 1px 1fr 1px 80px;
         grid-template-areas:
             'm-header'
@@ -101,8 +99,6 @@ body {
 /* Estilos para tablets e dobráveis */
     body {
             
-        height: 100vh;
-
         grid-template-rows: 80px 1px 1fr 1px 80px;
         grid-template-areas:
             'm-header'
