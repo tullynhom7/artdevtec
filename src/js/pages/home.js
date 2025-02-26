@@ -39,7 +39,9 @@ art.pages.push({
                         </label>
                     </article>
                     <article id="harpa" class="piece-surface background-color-088 border-color-080">
-                        <img src="src/img/harpa icon.png">
+                        <img id="harpa_app" src="src/img/harpa_app.png">
+                        <img id="harpa_icon" src="src/img/harpa icon.png">
+                        <h1>Harpa Cristã</h1>
                     </article>
                     <article id="card-button" class="piece-surface background-color-088 border-color-080">
                         <header></header>
