@@ -19,7 +19,7 @@ art.pages.push({
                 webkit-scrollbar-display-1
 
             ">
-                <section id="recents">
+                <section id="recents-section">
                     <article
                         id="banner-pieces"
                         class="
@@ -99,7 +99,13 @@ art.pages.push({
                     <article class="piece-surface background-color-088 border-color-080"></article>
                     <article class="piece-surface background-color-088 border-color-080"></article>
                 </section>
-                <section id="harpa" style="height: calc(100vh - 81px);"></section>
+                <section id="harpa-section" style="height: calc(100vh - 81px);">
+                    <img id="harpa_app" src="src/img/harpa_app.png">
+                    <img id="harpa_icon" src="src/img/harpa icon.png">
+                    <img id="qr-light" src="src/img/qr-code to light.png">
+                    <h1>Harpa Cristã</h1>
+                </section>
+                <section id="" style="height: calc(100vh - 81px);"></section>
             </section>
         `
     }
